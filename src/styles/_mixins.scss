@@ -14,3 +14,14 @@
   object-fit: $size;
   width: 100%;
 }
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}

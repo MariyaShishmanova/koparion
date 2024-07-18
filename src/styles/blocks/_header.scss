@@ -1,0 +1,108 @@
+.header {
+  overflow: hidden;
+  font-size: $header-font-size;
+  line-height: 1.39;
+
+  &__bar {
+    position: relative;
+    padding-block: 8px 12px;
+    text-align: center;
+
+    @include media(up, $tablet-small) {
+      @include flex-space-between;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 200vw;
+      left: -100vw;
+      top: 0;
+      height: 100%;
+      z-index: -1;
+      background-color: $color-mercury;
+    }
+  }
+
+  &__currency {
+    position: relative;
+    display: inline-block;
+
+    &:hover {
+      .header__currency-list {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-list {
+      text-align: left;
+      background-color: $color-white;
+      box-shadow: $shadow;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      margin-block-start: 12px;
+      width: 200px;
+      padding: 15px 6px 18px 12px;
+      transition: opacity $trs ease, visibility $trs ease;
+      z-index: 10;
+
+      a {
+        transition: color $trs ease;
+
+        &:hover {
+          color: $color-tango;
+        }
+      }
+    }
+
+    &-current {
+      span {
+        margin-inline-end: 10px;
+      }
+
+      .fa-angle-down {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__account-area {
+    @include flex-space-between;
+    margin-inline: -11px;
+
+    @include media(down, $tablet-small) {
+      margin-block-start: 10px;
+      justify-content: center;
+    }
+
+    li {
+      padding-inline: 11px;
+    }
+
+    li + li {
+      border-left: 1px solid;
+    }
+
+    a {
+      transition: color $trs ease;
+
+      &:hover {
+        color: $color-tango;
+      }
+    }
+  }
+
+  &__body {
+    @include flex-space-between;
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+    }
+  }
+}
