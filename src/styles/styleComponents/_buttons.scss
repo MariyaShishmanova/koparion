@@ -1,0 +1,72 @@
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  // font-size: $buttons-mobile-font-size;
+  // font-weight: 700;
+  outline: inherit;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  text-decoration: none;
+  padding: 16px 32px 15px;
+  // line-height: normal;
+  // height: 52px;
+
+  &-nav {
+    cursor: pointer;
+    position: relative;
+    display: none;
+    width: 29px;
+    height: 25px;
+    padding: 0;
+
+    @include media(down, $tablet-small) {
+      display: block;
+    }
+
+    &.active {
+      &:after {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:before {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+
+      span:after {
+        top: 50%;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:before,
+    &:after,
+    span:after {
+      content: '';
+      background-color: $color-white;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      display: block;
+      left: 0;
+      transition-property: opacity, visibility, transform, top;
+      transition-duration: $trs;
+      transition-timing-function: ease-in-out;
+    }
+
+    &:before {
+      top: 4px;
+    }
+
+    &:after {
+      top: 12px;
+    }
+
+    span:after {
+      bottom: 3px;
+    }
+  }
+}

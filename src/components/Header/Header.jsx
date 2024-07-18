@@ -18,8 +18,8 @@ export default function Header() {
           <div className="header__body">
             <SearchForm />
 
-            <div className="header__logo">
-              <a href="#" className="logo">
+            <div className="header__logo logo">
+              <a href="#">
                 <img src="logo_300x.png" alt="logo" />
               </a>
             </div>
