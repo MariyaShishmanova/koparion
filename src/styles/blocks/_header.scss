@@ -224,15 +224,13 @@
         left: 0;
         right: 0;
         padding-inline: 30px;
-        // top: var(--header-height);
-        top: 369px;
+        top: var(--header-height);
         transition-property: visibility, opacity, max-height;
         transition-duration: $trs;
         transition-timing-function: ease-in-out;
         overflow-y: auto;
         max-height: 0;
-        // height: calc(var(--viewport-height) - var(--header-height));
-        height: 170px;
+        height: calc(var(--viewport-height) - var(--header-height));
       }
     }
 
@@ -243,6 +241,7 @@
 
       @include media(down, $tablet-small) {
         @include center-block(460px);
+        height: var(--viewport-height);
       }
     }
 
