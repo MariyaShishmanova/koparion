@@ -42,7 +42,7 @@ button {
   position: relative;
 
   @include media(up, $tablet) {
-    max-width: 960;
+    max-width: 960px;
   }
 
   @include media(down, $mobile) {

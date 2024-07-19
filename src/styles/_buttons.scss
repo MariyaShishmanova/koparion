@@ -2,16 +2,32 @@
   appearance: none;
   border: 0;
   border-radius: 4px;
-  // font-size: $buttons-mobile-font-size;
-  // font-weight: 700;
+  font-size: $button-font-size-mobile;
+  color: $color-white;
+  background-color: transparent;
   outline: inherit;
   display: inline-block;
   text-align: center;
   user-select: none;
   text-decoration: none;
-  padding: 16px 32px 15px;
-  // line-height: normal;
-  // height: 52px;
+  padding: 10px 38px;
+  line-height: 1.88;
+
+  &--filled {
+    border: 1px solid $color-hot-cinnamon;
+    background-color: $color-tango;
+    transition: background-color, border-color, $trs ease;
+
+    &:hover {
+      background-color: $color-mine-shaft;
+      border-color: $color-mine-shaft;
+    }
+  }
+
+  @include media(up, $tablet) {
+    font-size: $button-font-size;
+    line-height: 1.416;
+  }
 
   &-nav {
     cursor: pointer;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import MenuItem from './MenuItem';
 
 export default function Menu() {
   const [isActive, setIsActive] = useState(false);
@@ -32,21 +33,10 @@ export default function Menu() {
 
       <div className="header__menu-nav">
         <ul className="header__menu-list">
-          <li className="header__menu-item">
-            <a href="#">home</a>
-          </li>
-
-          <li className="header__menu-item">
-            <a href="#">shop</a>
-          </li>
-
-          <li className="header__menu-item">
-            <a href="#">product</a>
-          </li>
-
-          <li className="header__menu-item">
-            <a href="#">blog</a>
-          </li>
+          <MenuItem>home</MenuItem>
+          <MenuItem>shop</MenuItem>
+          <MenuItem>product</MenuItem>
+          <MenuItem>blog</MenuItem>
         </ul>
       </div>
     </div>

@@ -1,0 +1,46 @@
+.section-hero {
+  background-image: url(../assets/hero.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-block: 125px 130px;
+  position: relative;
+
+  @include media(down, $tablet) {
+    text-align: center;
+  }
+
+  &__title {
+    @include title-h1;
+    color: $color-mine-shaft;
+    margin-block: 10px 7px;
+
+    @include media(up, $tablet) {
+      margin-block-end: 25px;
+    }
+  }
+
+  &__subtitle {
+    @include title-h2;
+    color: $color-white;
+  }
+
+  &__entry {
+    font-family: 'Rufina', serif;
+    color: $color-dove-grey;
+    font-size: 20px;
+    line-height: 1;
+
+    @include media(up, $tablet) {
+      font-size: $h1-font-size-mobile;
+    }
+  }
+
+  &__actions {
+    margin-block-start: 20px;
+
+    @include media(up, $tablet) {
+      margin-block-end: 43px;
+    }
+  }
+}
