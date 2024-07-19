@@ -3,12 +3,6 @@
   font-size: $header-font-size;
   line-height: 1.39;
 
-  &__inner {
-    @include media(down, $tablet-small) {
-      @include center-block(460px);
-    }
-  }
-
   &__bar {
     position: relative;
     padding-block: 8px 12px;
@@ -223,7 +217,6 @@
         position: fixed;
         left: 0;
         right: 0;
-        padding-inline: 30px;
         top: var(--header-height);
         transition-property: visibility, opacity, max-height;
         transition-duration: $trs;
@@ -240,7 +233,7 @@
       }
 
       @include media(down, $tablet-small) {
-        @include center-block(460px);
+        @include center-block(510px);
         height: var(--viewport-height);
       }
     }

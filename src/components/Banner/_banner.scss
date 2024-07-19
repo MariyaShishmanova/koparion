@@ -1,0 +1,45 @@
+.banner {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    flex: 32px 0 0;
+    margin-inline-end: 12px;
+
+    @include media(up, $mobile) {
+      flex-basis: 27px;
+    }
+  }
+
+  &__title {
+    margin-block-end: 2px;
+
+    @include media(up, $tablet) {
+      font-size: 15px;
+    }
+  }
+
+  &__entry {
+    font-size: 13px;
+  }
+
+  &-area__inner {
+    padding-block: 30px 20px;
+
+    @include media(up, $mobile) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @include media(up, $tablet) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  + .banner {
+    @include media(down, $mobile) {
+      margin-block-start: 20px;
+    }
+  }
+}
