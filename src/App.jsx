@@ -10,8 +10,6 @@ function App() {
     <Header />
     <BannerArea />
     <SectionHero />
-    <SectionHero />
-    <SectionHero />
     </>
   )
 }

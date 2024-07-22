@@ -14,6 +14,7 @@
     @include title-h1;
     color: $color-mine-shaft;
     margin-block: 10px 7px;
+    --animate-delay: 0.4s;
 
     @include media(up, $tablet) {
       margin-block-end: 25px;
@@ -30,6 +31,7 @@
     color: $color-dove-grey;
     font-size: 20px;
     line-height: 1;
+    --animate-delay: 0.5s;
 
     @include media(up, $tablet) {
       font-size: $h1-font-size-mobile;
