@@ -217,24 +217,28 @@
         position: fixed;
         left: 0;
         right: 0;
-        top: var(--header-height);
+        top: var(--header-menu-nav-top);
         transition-property: visibility, opacity, max-height;
         transition-duration: $trs;
         transition-timing-function: ease-in-out;
         overflow-y: auto;
         max-height: 0;
-        height: calc(var(--viewport-height) - var(--header-height));
+        z-index: 10;
+        height: 300px;
       }
     }
 
     &-list {
+      margin-inline: -8px;
       @include media(up, $tablet-small) {
         display: flex;
       }
 
       @include media(down, $tablet-small) {
         @include center-block(510px);
-        height: var(--viewport-height);
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 252px;
       }
     }
 
@@ -269,8 +273,10 @@
           opacity: 1;
         }
 
-        a:after {
-          width: 220%;
+        @include media(up, $tablet-small) {
+          a:after {
+            width: 220%;
+          }
         }
       }
 
@@ -282,38 +288,65 @@
         position: relative;
         display: flex;
 
-        &::before {
-          content: '';
-          background-color: $color-tango;
-          position: absolute;
-          left: 0;
-          top: -8px;
-          width: 100%;
-          height: calc(100% + 8px);
-          opacity: 0;
-          z-index: -1;
-          transition: opacity, $trs ease;
-        }
-
-        &::after {
-          content: '';
-          background-color: $color-tango;
-          bottom: -1px;
-          position: absolute;
-          left: 0;
-          width: 0;
-          height: 3px;
-          opacity: 0;
-          z-index: -1;
-          transition: opacity $trs ease, width $trs ease;
-        }
-
         @include media(down, $tablet-small) {
           background-color: $color-alabaster;
           padding-inline: 12px;
           display: flex;
           font-size: 12px;
         }
+
+        @include media(up, $tablet-small) {
+          &::before {
+            content: '';
+            background-color: $color-tango;
+            position: absolute;
+            left: 0;
+            top: -8px;
+            width: 100%;
+            height: calc(100% + 8px);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity, $trs ease;
+          }
+
+          &::after {
+            content: '';
+            background-color: $color-tango;
+            bottom: -1px;
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 3px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity $trs ease, width $trs ease;
+          }
+        }
+      }
+    }
+
+    &.fixed {
+      @include center-block(100%);
+      position: fixed;
+      top: 0;
+      left: 15px;
+      right: 15px;
+      z-index: 10;
+
+      @include media(up, $mobile) {
+        max-width: 510px;
+      }
+
+      @include media(up, $tablet-small) {
+        max-width: 690px;
+      }
+
+      @include media(up, $tablet) {
+        max-width: 930px;
+      }
+
+      @include media(up, $desktop) {
+        max-width: 1110px;
       }
     }
   }

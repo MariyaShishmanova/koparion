@@ -55,23 +55,6 @@ button {
   @include media(up, $desktop) {
     max-width: 1140px;
   }
-
-  // @include center-block(1140px);
-  // padding-inline: 30px;
-  // position: relative;
-
-  // @include media(down, $tablet) {
-  //   max-width: 960px;
-  // }
-
-  // @include media(down, $tablet-small) {
-  //   max-width: 540px;
-  // }
-
-  // @include media(down, $mobile) {
-  //   max-width: 100%;
-  //   padding-inline: 15px;
-  // }
 }
 
 .sr-only {

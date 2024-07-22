@@ -17,24 +17,28 @@ export default function Header() {
     document.documentElement.style.setProperty(property, `${value}${unit}`);
   }
 
-  // Function to get and update the header height
-  function handleHeights() {
+  // Function to set the header menu nav top
+  function setHeaderMenuNavTop() {
     if (headerRef.current) {
-      const headerHeight = headerRef.current.offsetHeight;
-      setCssProperty('--header-height', headerHeight);
+      const headerBottom = headerRef.current.getBoundingClientRect().bottom;
+      if (headerBottom < 56) {
+        setCssProperty('--header-menu-nav-top', 56);
+      } else {
+        setCssProperty('--header-menu-nav-top', headerBottom);
+      }
     }
-    setCssProperty('--viewport-height', window.innerHeight);
   }
 
-  // Set initial viewport height and header height
   useEffect(() => {
-    handleHeights();
-
-    // update on window resize
-    window.addEventListener('resize', handleHeights);
+    setHeaderMenuNavTop();
+    // Update on window scroll
+    window.addEventListener('scroll', setHeaderMenuNavTop);
+    // Update on window resize
+    window.addEventListener('resize', setHeaderMenuNavTop);
 
     return () => {
-      window.removeEventListener('resize', handleHeights);
+      window.removeEventListener('scroll', setHeaderMenuNavTop);
+      window.removeEventListener('resize', setHeaderMenuNavTop);
     };
   }, []);
 
@@ -44,23 +48,18 @@ export default function Header() {
         <div className="header__inner">
           <div className="header__bar">
             <CurrencySelect />
-
             <AccountArea />
           </div>
-
           <div className="header__body">
             <SearchForm />
-
             <div className="header__logo logo">
               <a href="#">
                 <img src="logo_300x.png" alt="logo" />
               </a>
             </div>
-
             <Cart />
           </div>
-
-          <Menu />
+          <Menu onToggleMenu={setHeaderMenuNavTop} />
         </div>
       </div>
     </header>
