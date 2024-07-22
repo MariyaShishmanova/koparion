@@ -1,0 +1,57 @@
+.section-products {
+  text-align: center;
+
+  &__title {
+    margin-block-end: 20px;
+    @include title-h3;
+  }
+
+  &__entry {
+    @include center-block(600px);
+    font-family: 'Rufina', serif;
+    font-size: $button-font-size-mobile;
+    letter-spacing: 1px;
+    line-height: 1.714;
+    margin-block-end: 50px;
+
+    @include media(down, $tablet-small) {
+      font-size: $text-font-size;
+    }
+  }
+
+  &__menu {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    margin-block-end: 20px;
+
+    a {
+      font-weight: 700;
+      position: relative;
+      transition: opacity, $trs ease;
+
+      &.active:after,
+      &:hover:after {
+        opacity: 1;
+        top: 100%;
+      }
+
+      &::after {
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+        background-color: $color-tango;
+        position: absolute;
+        left: 0;
+        top: 150%;
+        opacity: 0;
+        transition: opacity 0.8s ease, top 0.8s ease;
+      }
+
+      &:hover {
+        color: $color-tango;
+      }
+    }
+  }
+}

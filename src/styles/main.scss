@@ -1,3 +1,5 @@
+@import 'swiper/css';
+
 @import './variables';
 @import './mixins';
 @import './typography';
@@ -8,3 +10,7 @@
 @import './buttons';
 @import '../components/Section-hero/section-hero';
 @import '../components/Banner/banner';
+@import '../components/Section/section';
+@import '../components/Section-products/section-products';
+@import '../components/Product/product';
+@import '../components/Products/products';

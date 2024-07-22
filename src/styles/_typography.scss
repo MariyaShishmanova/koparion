@@ -12,10 +12,15 @@
   font-weight: 400;
 }
 
-@mixin title-h6 {
-  // font-size: $h6-font-size;
-  // font-weight: 500;
-  // letter-spacing: 0.075em;
+@mixin title-h3 {
+  font-family: 'Rufina', serif;
+  font-size: $h3-font-size-mobile;
+  font-weight: 700;
+  line-height: 1.428;
+
+  @include media(up, $tablet-small) {
+    font-size: $h3-font-size;
+  }
 }
 
 @mixin body-text {

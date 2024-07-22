@@ -3,8 +3,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding-block: 125px 130px;
   position: relative;
+  overflow-x: hidden;
 
   @include media(down, $tablet) {
     text-align: center;
