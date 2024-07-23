@@ -25,6 +25,10 @@
     gap: 10px 12px;
     margin-block-end: 20px;
 
+    @include media(up, $tablet-small) {
+      margin-block-end: 40px;
+    }
+
     a {
       font-weight: 700;
       position: relative;
@@ -49,7 +53,8 @@
         transition: opacity 0.8s ease, top 0.8s ease;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         color: $color-tango;
       }
     }

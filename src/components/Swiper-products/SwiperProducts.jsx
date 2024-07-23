@@ -1,10 +1,8 @@
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 import Product from '../Product/Product';
 import product1 from '../../assets/product1.png';
@@ -18,23 +16,24 @@ import product8 from '../../assets/product8.png';
 
 export default function Products() {
   const productData = [
-    { name: 'Product dummy title', price: '$42.99', img: product1 },
-    { name: 'Dummy text for title', price: '$42.59', img: product2 },
-    { name: 'Product title here', price: '$22.99', img: product3 },
-    { name: 'Product dummy title', price: '$33.99', img: product4 },
-    { name: 'Product dummy title', price: '$13.99', img: product5 },
-    { name: 'Product dummy title', price: '$43.99', img: product6 },
-    { name: 'Product dummy title', price: '$3.99', img: product7 },
-    { name: 'Product dummy title', price: '$37.99', img: product8 }
+    { name: 'Product dummy title', price: '$42.99', img: product1, href: '#' },
+    { name: 'Dummy text for title', price: '$42.59', img: product2, href: '#' },
+    { name: 'Product title here', price: '$22.99', img: product3, href: '#' },
+    { name: 'Product dummy title', price: '$33.99', img: product4, href: '#' },
+    { name: 'Product dummy title', price: '$13.99', img: product5, href: '#' },
+    { name: 'Product dummy title', price: '$43.99', img: product6, href: '#' },
+    { name: 'Product dummy title', price: '$3.99', img: product7, href: '#' },
+    { name: 'Product dummy title', price: '$37.99', img: product8, href: '#' }
   ];
 
   return (
     <Swiper
       spaceBetween={30}
       navigation
+      effect="slide"
+      speed={800}
       loop={true}
-      autoplay={{ delay: 3000 }}
-      modules={[Navigation, Autoplay]}
+      modules={[Navigation]}
       breakpoints={{
         480: {
           slidesPerView: 2
@@ -49,7 +48,7 @@ export default function Products() {
     >
       {productData.map((product, index) =>
         <SwiperSlide key={index}>
-          <Product name={product.name} price={product.price} img={product.img} />
+          <Product name={product.name} price={product.price} img={product.img} href={product.href} />
         </SwiperSlide>
       )}
     </Swiper>

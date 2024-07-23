@@ -1,0 +1,122 @@
+.product {
+  &__img {
+    @include center-block(292px);
+    position: relative;
+
+    &:after {
+      content: '';
+      background-color: rgba($color-white, 0.5);
+      width: 100%;
+      height: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: height 0.8s ease;
+    }
+
+    &-quick-view {
+      @include width-height(61px);
+      @include flex-center;
+      background-color: $color-tango;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 35%;
+      translate: -50%;
+      transform: scale(0);
+      transition: transform 0.6s ease;
+      z-index: 5;
+    }
+  }
+
+  &__title {
+    font-family: 'Rufina', serif;
+    font-size: $button-font-size-mobile;
+    font-weight: 500;
+    margin-block: 10px 13px;
+    transition: color $trs ease;
+
+    &:hover {
+      color: $color-tango;
+    }
+  }
+
+  &__price {
+    &-cost {
+      color: $color-tango;
+      font-style: italic;
+      font-weight: 500;
+      transition: opacity $trs ease, visibility $trs ease;
+    }
+
+    &-add-link {
+      font-family: 'Rufina', serif;
+      font-size: $text-font-size;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      margin-inline-start: 25px;
+      transition: opacity 0.6s ease, visibility 0.6s ease, color $trs ease;
+
+      &:hover {
+        color: $color-tango;
+      }
+
+      &::after {
+        content: '';
+        height: 1px;
+        display: block;
+        margin-block-start: 8px;
+        background-color: $color-mercury;
+        transform: scale(0);
+        transition: transform 0.6s ease;
+      }
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+
+    &:hover {
+      .product__img::after {
+        height: 100%;
+      }
+
+      .product__img-quick-view {
+        transform: scale(1);
+      }
+
+      .product__price-cost {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .product__price-add-link {
+        opacity: 1;
+        visibility: visible;
+
+        &:after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .fa-magnifying-glass-plus {
+    color: $color-white;
+    font-size: 18px;
+  }
+
+  .fa-cart-shopping {
+    margin-inline-end: 10px;
+  }
+
+  img {
+    @include image-size(contain);
+  }
+}

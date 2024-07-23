@@ -1,5 +1,5 @@
 import Section from '../Section/Section';
-import Products from '../Products/Products';
+import SwiperProducts from '../Swiper-products/SwiperProducts';
 
 export default function SectionProducts() {
   return (
@@ -23,7 +23,7 @@ export default function SectionProducts() {
       </ul>
 
       <div className="section-products__content">
-        <Products />
+        <SwiperProducts />
       </div>
     </Section>
   );

@@ -1,0 +1,38 @@
+.swiper {
+  &:hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    @include width-height(60px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $trs ease, visibility $trs ease, background-color $trs, color $trs;
+    background-color: $color-alabaster;
+    border-radius: 4px;
+    color: $color-mine-shaft;
+    font-weight: 700;
+
+    @include media(down, $tablet) {
+      @include width-height(40px);
+    }
+
+    &:hover {
+      background-color: $color-tango;
+      color: $color-white;
+    }
+
+    &:after {
+      font-size: 25px;
+
+      @include media(down, $tablet) {
+        font-size: 15px;
+      }
+    }
+  }
+}
