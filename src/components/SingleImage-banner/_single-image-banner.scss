@@ -1,0 +1,47 @@
+.single-banner {
+  &__inner {
+    position: relative;
+  }
+
+  &__text {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-white;
+    z-index: 2;
+  }
+
+  &__subtitle {
+    font-size: $text-font-size-small;
+
+    @include media(up, $tablet) {
+      font-size: $h3-font-size-mobile;
+    }
+  }
+
+  &__title {
+    font-size: $button-font-size-mobile;
+  }
+
+  @include media(up, $tablet) {
+    font-size: $h3-font-size;
+  }
+
+  &__img {
+    height: 100px;
+    overflow: hidden;
+  }
+
+  a:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  img {
+    @include image-size(unset);
+    transition: transform 0.5s ease;
+    transform: scale(1);
+  }
+}
