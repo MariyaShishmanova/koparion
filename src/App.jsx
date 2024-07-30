@@ -5,6 +5,7 @@ import SectionHero from './components/Section-hero/SectionHero'
 import SectionProducts from './components/Section-products/SectionProducts'
 import SingleImageBanner from './components/SingleImage-banner/SingleImageBanner'
 import SectionBestSeller from './components/Section-best-seller/SectionBestSeller'
+import SectionPromotions from './components/Section-promotions/SectionPromotions'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <SectionProducts />
     <SingleImageBanner/>
     <SectionBestSeller/>
+    <SectionPromotions/>
     </>
   )
 }

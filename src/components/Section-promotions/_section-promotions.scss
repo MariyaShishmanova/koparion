@@ -1,0 +1,38 @@
+.section-promotions {
+  background-image: url(../assets/grey-bg-image.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__inner {
+    display: grid;
+    gap: 30px;
+
+    @include media(up, $tablet-small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__banner {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transition: box-shadow $trs ease;
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.7) inset;
+    }
+  }
+
+  a {
+    display: flex;
+  }
+}
