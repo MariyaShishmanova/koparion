@@ -1,0 +1,72 @@
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  font-size: $text-font-size-mobile;
+  background-color: $color-mine-shaft-2;
+  color: $color-white;
+  padding-block: 15px 30px;
+
+  &__top-bar {
+    padding-block-end: 15px;
+    border-bottom: 2px solid $color-mine-shaft-3;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      @include media(down, $tablet-small) {
+        gap: 20px;
+      }
+    }
+
+    li + li {
+      @include media(up, $tablet-small) {
+        border-inline-start: 1px solid $color-white;
+        padding-inline-start: 25px;
+        margin-inline-start: 25px;
+        row-gap: 0;
+      }
+    }
+  }
+
+  &__body {
+    padding-block: 50px 30px;
+    border-bottom: 2px solid $color-mine-shaft-3;
+  }
+
+  &__menu-wrap {
+    display: grid;
+    gap: 20px;
+
+    @include media(up, $tablet-small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(up, $tablet) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__menu {
+    @include media(up, $tablet) {
+      border-inline-end: 1px solid $color-mine-shaft-3;
+    }
+  }
+
+  &__bottom-bar {
+    padding-block: 30px;
+    display: grid;
+    gap: 30px;
+
+    @include media(up, $tablet-small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  a {
+    transition: color $trs ease;
+
+    &:hover {
+      color: $color-tango;
+    }
+  }
+}

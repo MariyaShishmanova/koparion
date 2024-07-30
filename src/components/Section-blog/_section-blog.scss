@@ -9,7 +9,7 @@
 
   &__content {
     display: grid;
-    gap: 30px;
+    gap: 55px 30px;
 
     @include media(up, $tablet-small) {
       grid-template-columns: repeat(2, 1fr);

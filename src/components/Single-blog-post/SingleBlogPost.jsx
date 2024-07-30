@@ -3,15 +3,8 @@ import { equalizeHeights } from '../../utils/equalizeHeight';
 
 export default function SingleBlogPost({ img, title, author, text, date }) {
   useEffect(() => {
-    // Adjust heights on mount and on window resize
-    const handleResize = () => {
-      equalizeHeights('.single-blog-post__title');
-      equalizeHeights('.single-blog-post__author');
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
+    equalizeHeights('.single-blog-post__title');
+    equalizeHeights('.single-blog-post__author');
   }, []);
 
   return (

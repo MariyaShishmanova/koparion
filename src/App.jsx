@@ -7,6 +7,7 @@ import SingleImageBanner from './components/SingleImage-banner/SingleImageBanner
 import SectionBestSeller from './components/Section-best-seller/SectionBestSeller'
 import SectionPromotions from './components/Section-promotions/SectionPromotions'
 import SectionBlog from './components/Section-blog/SectionBlog'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     <SectionBestSeller/>
     <SectionPromotions/>
     <SectionBlog/>
+    <Footer/>
     </>
   )
 }
