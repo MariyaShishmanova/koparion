@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import SectionHero from './components/Section-hero/SectionHero'
 import SectionProducts from './components/Section-products/SectionProducts'
 import SingleImageBanner from './components/SingleImage-banner/SingleImageBanner'
+import SectionBestSeller from './components/Section-best-seller/SectionBestSeller'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <SectionHero />
     <SectionProducts />
     <SingleImageBanner/>
+    <SectionBestSeller/>
     </>
   )
 }

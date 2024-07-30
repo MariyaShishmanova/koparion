@@ -1,19 +1,16 @@
 @mixin title-h1 {
   font-size: clamp($h1-font-size-mobile, 8vw, $h1-font-size);
-  font-family: 'Rufina', serif;
   line-height: 1;
   font-weight: 400;
 }
 
 @mixin title-h2 {
-  font-family: 'Rufina', serif;
   font-size: clamp($h2-font-size-mobile, 6vw, $h2-font-size);
   line-height: 1;
   font-weight: 400;
 }
 
 @mixin title-h3 {
-  font-family: 'Rufina', serif;
   font-size: $h3-font-size-mobile;
   font-weight: 700;
   line-height: 1.428;

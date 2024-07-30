@@ -8,7 +8,7 @@ body {
   @include body-text;
   background-color: $color-white;
   color: $color-mine-shaft;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rufina', serif;
   overflow-x: hidden;
 }
 
@@ -41,7 +41,7 @@ button {
   padding-inline: 15px;
 
   @include media(up, $mobile) {
-    max-width: 540px;
+    max-width: 460px;
   }
 
   @include media(up, $tablet-small) {
