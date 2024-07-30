@@ -6,6 +6,7 @@ import SectionProducts from './components/Section-products/SectionProducts'
 import SingleImageBanner from './components/SingleImage-banner/SingleImageBanner'
 import SectionBestSeller from './components/Section-best-seller/SectionBestSeller'
 import SectionPromotions from './components/Section-promotions/SectionPromotions'
+import SectionBlog from './components/Section-blog/SectionBlog'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
     <SingleImageBanner/>
     <SectionBestSeller/>
     <SectionPromotions/>
+    <SectionBlog/>
     </>
   )
 }

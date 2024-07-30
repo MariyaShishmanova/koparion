@@ -1,0 +1,22 @@
+.section-blog {
+  text-align: center;
+
+  &__title {
+    text-transform: uppercase;
+    margin-block-end: 30px;
+    @include title-h3;
+  }
+
+  &__content {
+    display: grid;
+    gap: 30px;
+
+    @include media(up, $tablet-small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(up, $tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

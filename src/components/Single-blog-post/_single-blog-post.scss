@@ -1,0 +1,64 @@
+.single-blog-post {
+  @include center-block(430px);
+  position: relative;
+  color: $color-dove-grey;
+  text-align: center;
+
+  &__date {
+    @include width-height(54px);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 5px 7px;
+    background-color: $color-white;
+    color: $color-mine-shaft;
+    font-size: $text-font-size-mobile;
+    z-index: 2;
+  }
+
+  &__title {
+    margin-block: 16px;
+    font-size: 19px;
+    font-weight: 400;
+    transition: color $trs ease;
+
+    @include media(up, $tablet-small) {
+      font-size: $button-font-size;
+    }
+
+    &:hover {
+      color: $color-tango;
+    }
+  }
+
+  &__author {
+    margin-block-end: 20px;
+  }
+
+  &__text {
+    font-size: $text-font-size-mobile;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__img {
+    overflow: hidden;
+
+    &-wrap {
+      display: flex;
+    }
+  }
+
+  img {
+    @include image-size;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
