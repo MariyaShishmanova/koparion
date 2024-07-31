@@ -1,0 +1,57 @@
+.section-reviews {
+  background-image: url('../assets/reviews-bg-img.png');
+  background-position: center;
+  background-size: cover;
+  color: $color-white;
+  text-align: center;
+  padding-block: 70px;
+
+  &__review {
+    padding-block: 60px;
+
+    &-text {
+      font-size: 17px;
+      margin-block: 50px 18px;
+
+      @include media(up, $tablet-small) {
+        font-size: $h3-font-size-mobile;
+      }
+    }
+
+    &-author {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+    }
+
+    &-image {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        @include width-height(97px);
+        content: '';
+        border-radius: 50%;
+        border: 1px solid $color-white;
+        background-color: transparent;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @include width-height(10px);
+      background-color: $color-alto;
+      transition: background-color $trs ease;
+      opacity: 1;
+
+      &:hover,
+      &-active {
+        background-color: $color-tango;
+      }
+    }
+  }
+}

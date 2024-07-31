@@ -35,10 +35,10 @@ export default function Footer() {
               <div className="footer__contacts">
                 <h2 className="footer__title">store information</h2>
 
-                <p className="footer__address">
+                <div className="footer__address">
                   <p className="footer__address-title">My Company</p>
                   42 avenue des Champs Elysées 75000 Paris France
-                </p>
+                </div>
 
                 <p className="footer__tel">
                   <a href="tel:555555555">Call us now: 55555555555</a>
