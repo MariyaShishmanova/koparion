@@ -50,6 +50,30 @@
     @include media(up, $tablet) {
       border-inline-end: 1px solid $color-mine-shaft-3;
     }
+
+    &-item + &-item {
+      margin-block-start: 10px;
+    }
+  }
+
+  &__title {
+    font-family: 'Rufina', serif;
+    font-size: $text-font-size;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-block-end: 20px;
+  }
+
+  &__address {
+    margin-block-end: 15px;
+
+    &-title {
+      margin-block-end: 6px;
+    }
+  }
+
+  &__tel {
+    margin-block-end: 15px;
   }
 
   &__bottom-bar {

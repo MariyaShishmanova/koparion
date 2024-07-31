@@ -36,7 +36,7 @@ export default function Footer() {
                 <h2 className="footer__title">store information</h2>
 
                 <p className="footer__address">
-                  <span>My Company</span>
+                  <p className="footer__address-title">My Company</p>
                   42 avenue des Champs Elysées 75000 Paris France
                 </p>
 
