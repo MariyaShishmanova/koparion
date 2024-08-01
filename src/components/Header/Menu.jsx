@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 import MenuItem from './MenuItem';
 
 export default function Menu({ onToggleMenu }) {
@@ -9,7 +10,7 @@ export default function Menu({ onToggleMenu }) {
   const [isFixed, setIsFixed] = useState(false);
 
   // state to keep track of the currently active menu item
-  const [activeItem, setActiveItem] = useState('/');
+  const [activeItem, setActiveItem] = useState(location.pathname);
 
   const menuRef = useRef(null);
   const originalPositionRef = useRef(null);

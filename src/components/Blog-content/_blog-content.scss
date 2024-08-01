@@ -6,4 +6,10 @@
   @include media(up, $tablet-small) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  &__no-items-title {
+    font-size: $text-font-size;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
 }
