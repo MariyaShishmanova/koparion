@@ -264,7 +264,8 @@
         transition: opacity $trs ease;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         &:after {
           opacity: 1;
         }

@@ -2,8 +2,15 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import MenuItem from './MenuItem';
 
 export default function Menu({ onToggleMenu }) {
+  // handle btn-nav
   const [isActive, setIsActive] = useState(false);
+
+  // handle the header__menu state
   const [isFixed, setIsFixed] = useState(false);
+
+  // state to keep track of the currently active menu item
+  const [activeItem, setActiveItem] = useState('/');
+
   const menuRef = useRef(null);
   const originalPositionRef = useRef(null);
   const listRef = useRef(null);
@@ -86,6 +93,11 @@ export default function Menu({ onToggleMenu }) {
     onToggleMenu(); // Call the parent function to update --header-menu-nav-top
   };
 
+  // update active menu item
+  const handleItemClick = item => {
+    setActiveItem(item);
+  };
+
   return (
     <div className={`header__menu ${isFixed ? 'fixed' : ''}`} ref={menuRef}>
       <p className="header__menu-title">Menu</p>
@@ -96,10 +108,30 @@ export default function Menu({ onToggleMenu }) {
 
       <div className="header__menu-nav" ref={navRef}>
         <ul className="header__menu-list" ref={listRef}>
-          <MenuItem to="/">home</MenuItem>
-          <MenuItem>shop</MenuItem>
-          <MenuItem>product</MenuItem>
-          <MenuItem to="/blog">blog</MenuItem>
+          <MenuItem
+            to="/"
+            isActive={activeItem === '/'}
+            onClick={() => {
+              handleItemClick('/');
+            }}
+          >
+            home
+          </MenuItem>
+          <MenuItem
+            to="/shop"
+            isActive={activeItem === '/shop'}
+            onClick={() => {
+              handleItemClick('/shop');
+            }}
+          >
+            shop
+          </MenuItem>
+          <MenuItem to="/product" isActive={activeItem === '/product'} onClick={() => handleItemClick('/product')}>
+            product
+          </MenuItem>
+          <MenuItem to="/blog" isActive={activeItem === '/blog'} onClick={() => handleItemClick('/blog')}>
+            blog
+          </MenuItem>
         </ul>
       </div>
     </div>
