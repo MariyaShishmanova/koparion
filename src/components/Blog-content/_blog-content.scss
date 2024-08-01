@@ -1,0 +1,9 @@
+.blog-content {
+  display: grid;
+  gap: 60px 30px;
+  position: relative;
+
+  @include media(up, $tablet-small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

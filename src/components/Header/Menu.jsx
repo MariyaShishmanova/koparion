@@ -96,10 +96,10 @@ export default function Menu({ onToggleMenu }) {
 
       <div className="header__menu-nav" ref={navRef}>
         <ul className="header__menu-list" ref={listRef}>
-          <MenuItem>home</MenuItem>
+          <MenuItem to="/">home</MenuItem>
           <MenuItem>shop</MenuItem>
           <MenuItem>product</MenuItem>
-          <MenuItem>blog</MenuItem>
+          <MenuItem to="/blog">blog</MenuItem>
         </ul>
       </div>
     </div>

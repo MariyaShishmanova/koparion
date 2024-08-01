@@ -85,4 +85,21 @@
       bottom: 3px;
     }
   }
+
+  &-pagination {
+    @include width-height(35px);
+    border: 1px solid $color-mercury;
+    margin-inline: 2px;
+    transition: color $trs ease, background-color $trs ease;
+
+    &:hover,
+    &.active {
+      color: $color-white;
+      background-color: $color-tango;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
 }

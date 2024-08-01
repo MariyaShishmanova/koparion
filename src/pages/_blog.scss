@@ -1,0 +1,16 @@
+.blog {
+  padding-block: 60px 80px;
+
+  &__inner {
+    display: flex;
+    gap: 30px;
+
+    @include media(down, $tablet) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &-sidebar {
+    flex-basis: 22.9729%;
+  }
+}
