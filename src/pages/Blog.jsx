@@ -1,33 +1,23 @@
-import { useState } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import BlogContent from '../components/Blog-content/BlogContent';
+import DetailedBlogPost from '../components/DetailedBlogPost/DetailedBlogPost';
 import BlogSidebar from '../components/Blog-sidebar/BlogSidebar';
-import blogPosts from '../data/blogPosts';
 
-function Blog() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTopic, setSelectedTopic] = useState('');
-
-  // function to filter blog posts
-  const filterPosts = () => {
-    return blogPosts.filter(post => {
-      const matchesSearchQuery = post.title.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesTopic = selectedTopic ? post.topic.includes(selectedTopic) : true;
-      return matchesSearchQuery && matchesTopic;
-    });
-  };
-
-  const filteredPosts = filterPosts();
-
+const Blog = ({ posts }) => {
   return (
     <div className="blog">
       <div className="container">
         <div className="blog__inner">
-          <BlogSidebar setSearchQuery={setSearchQuery} setSelectedTopic={setSelectedTopic} />
-          <BlogContent posts={filteredPosts} />
+          <BlogSidebar />
+          <Routes>
+            <Route path="/" element={<BlogContent posts={posts} />} />
+            <Route path="post/:id" element={posts ? <DetailedBlogPost posts={posts} /> : <div>Loading...</div>} />
+          </Routes>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Blog;

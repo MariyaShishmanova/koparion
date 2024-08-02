@@ -29,6 +29,10 @@
     &:hover {
       color: $color-tango;
     }
+
+    a {
+      display: block;
+    }
   }
 
   &__author {
@@ -45,10 +49,22 @@
   }
 
   &__img {
-    overflow: hidden;
-
     &-wrap {
       display: flex;
+      overflow: hidden;
+    }
+  }
+
+  &__read-more {
+    border-block-start: 1px dotted $color-mercury;
+    font-size: $text-font-size-mobile;
+    display: block;
+    margin-block-start: 10px;
+    padding-block-start: 10px;
+    transition: color $trs ease;
+
+    &:hover {
+      color: $color-tango;
     }
   }
 

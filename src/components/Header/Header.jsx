@@ -5,6 +5,7 @@ import AccountArea from './AccountArea';
 import SearchForm from './SearchForm';
 import Menu from './Menu';
 import Cart from './Cart';
+import logo from '../../assets/logo_300x.png';
 
 export default function Header() {
   const headerRef = useRef(null);
@@ -54,7 +55,7 @@ export default function Header() {
             <SearchForm />
             <div className="header__logo logo">
               <a href="#">
-                <img src="logo_300x.png" alt="logo" />
+                <img src={logo} alt="logo" />
               </a>
             </div>
             <Cart />

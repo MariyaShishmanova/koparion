@@ -4,18 +4,21 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
+import blogPosts from './data/blogPosts';
 
-function App() {
+const App = () => {
+  const posts = blogPosts;
+
   return (
     <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/*" element={<Blog posts={posts} />} />
       </Routes>
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;

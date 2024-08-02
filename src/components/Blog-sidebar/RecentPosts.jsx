@@ -6,10 +6,9 @@ export default function RecentPosts() {
 
   return (
     <div className="blog-sidebar__recent-posts">
-      <h3 className="blog-sidebar__title">recent posts</h3>
-
+      <h3 className="blog-sidebar__title">Recent Posts</h3>
       <ul className="blog-sidebar__recent-posts-list">
-        {latestPosts.map((post, index) => <SingleBlogPost key={index} img={post.img} date={post.date} title={post.title} equalize={false} />)}
+        {latestPosts.map(post => <SingleBlogPost key={post.id} id={post.id} img={post.img} date={post.date} title={post.title} showReadMore={false} />)}
       </ul>
     </div>
   );

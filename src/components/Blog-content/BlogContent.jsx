@@ -7,6 +7,10 @@ const POSTS_PER_PAGE = 6;
 export default function BlogContent({ posts }) {
   const [currentPage, setCurrentPage] = useState(1);
 
+  if (!posts) {
+    return <div>Loading...</div>;
+  }
+
   // Calculate total pages
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
@@ -33,8 +37,9 @@ export default function BlogContent({ posts }) {
 
   return (
     <div className="blog-content">
-      {currentPosts.length > 0 ? currentPosts.map((post, index) => <SingleBlogPost key={index} img={post.img} date={post.date} title={post.title} author={post.author} text={post.text} />) : <h3 className="blog-content__no-items-title">Sorry, no posts matched your search</h3>}
-
+      {currentPosts.length > 0
+        ? currentPosts.map(post => <SingleBlogPost key={post.id} id={post.id} img={post.img} date={post.date} title={post.title} author={post.author} text={post.text} showReadMore={true} />)
+        : <h3 className="blog-content__no-items-title">Sorry, no posts matched your search</h3>}
       {showPagination && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />}
     </div>
   );

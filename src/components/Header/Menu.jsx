@@ -3,14 +3,9 @@ import { useLocation } from 'react-router-dom';
 import MenuItem from './MenuItem';
 
 export default function Menu({ onToggleMenu }) {
-  // handle btn-nav
   const [isActive, setIsActive] = useState(false);
-
-  // handle the header__menu state
   const [isFixed, setIsFixed] = useState(false);
-
-  // state to keep track of the currently active menu item
-  const [activeItem, setActiveItem] = useState(location.pathname);
+  const location = useLocation();
 
   const menuRef = useRef(null);
   const originalPositionRef = useRef(null);
@@ -38,19 +33,12 @@ export default function Menu({ onToggleMenu }) {
           originalPositionRef.current = scrollY + menuTop;
         }
 
-        if (scrollY > originalPositionRef.current) {
-          setIsFixed(true);
-        } else {
-          setIsFixed(false);
-        }
+        setIsFixed(scrollY > originalPositionRef.current);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(
@@ -61,9 +49,7 @@ export default function Menu({ onToggleMenu }) {
         document.body.classList.remove('mobile-nav-visible');
       }
 
-      return () => {
-        document.body.classList.remove('mobile-nav-visible');
-      };
+      return () => document.body.classList.remove('mobile-nav-visible');
     },
     [isActive]
   );
@@ -76,14 +62,10 @@ export default function Menu({ onToggleMenu }) {
       };
 
       window.addEventListener('resize', handleResize);
-
-      // Call the function initially to set the height correctly
       calculateMenuListHeight();
       onToggleMenu(); // Call the parent function to set --header-menu-nav-top
 
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
+      return () => window.removeEventListener('resize', handleResize);
     },
     [calculateMenuListHeight, onToggleMenu]
   );
@@ -94,10 +76,8 @@ export default function Menu({ onToggleMenu }) {
     onToggleMenu(); // Call the parent function to update --header-menu-nav-top
   };
 
-  // update active menu item
-  const handleItemClick = item => {
-    setActiveItem(item);
-  };
+  // Determine if the current path should be considered as part of the blog section
+  const isBlogPage = location.pathname.startsWith('/blog');
 
   return (
     <div className={`header__menu ${isFixed ? 'fixed' : ''}`} ref={menuRef}>
@@ -109,28 +89,16 @@ export default function Menu({ onToggleMenu }) {
 
       <div className="header__menu-nav" ref={navRef}>
         <ul className="header__menu-list" ref={listRef}>
-          <MenuItem
-            to="/"
-            isActive={activeItem === '/'}
-            onClick={() => {
-              handleItemClick('/');
-            }}
-          >
+          <MenuItem to="/" isActive={location.pathname === '/'}>
             home
           </MenuItem>
-          <MenuItem
-            to="/shop"
-            isActive={activeItem === '/shop'}
-            onClick={() => {
-              handleItemClick('/shop');
-            }}
-          >
+          <MenuItem to="/shop" isActive={location.pathname === '/shop'}>
             shop
           </MenuItem>
-          <MenuItem to="/product" isActive={activeItem === '/product'} onClick={() => handleItemClick('/product')}>
+          <MenuItem to="/product" isActive={location.pathname === '/product'}>
             product
           </MenuItem>
-          <MenuItem to="/blog" isActive={activeItem === '/blog'} onClick={() => handleItemClick('/blog')}>
+          <MenuItem to="/blog" isActive={isBlogPage}>
             blog
           </MenuItem>
         </ul>

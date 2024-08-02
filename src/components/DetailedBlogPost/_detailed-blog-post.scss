@@ -1,0 +1,38 @@
+.detailed-blog-post {
+  &__img {
+    max-height: 493px;
+    margin-block-end: 30px;
+  }
+
+  &__title {
+    font-size: $h1-font-size-mobile;
+    font-weight: 400;
+    margin-block-end: 10px;
+  }
+
+  &__text {
+    font-size: $text-font-size;
+    padding-block-end: 15px;
+    border-bottom: 1px solid $color-mercury;
+    margin-block-end: 30px;
+  }
+
+  &__comments {
+    &-title {
+      text-transform: uppercase;
+      font-size: 28px;
+    }
+  }
+
+  blockquote {
+    margin-block: 20px;
+    background-color: $color-alabaster;
+    padding: 20px;
+    font-style: italic;
+    font-size: $h3-font-size-mobile;
+  }
+
+  img {
+    @include image-size;
+  }
+}
