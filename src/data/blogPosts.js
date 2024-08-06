@@ -2,7 +2,6 @@
 import blogPostImg1 from '../assets/blog-img1.png';
 import blogPostImg2 from '../assets/blog-img2.png';
 import blogPostImg3 from '../assets/blog-img3.png';
-import { v4 as uuidv4 } from 'uuid';
 
 const blogPosts = [
   {

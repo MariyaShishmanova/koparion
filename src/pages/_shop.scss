@@ -1,0 +1,12 @@
+.shop {
+  padding-block: 60px 120px;
+
+  &__inner {
+    display: flex;
+    gap: 30px;
+
+    @include media(down, $tablet) {
+      flex-direction: column-reverse;
+    }
+  }
+}

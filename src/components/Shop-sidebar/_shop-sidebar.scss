@@ -1,0 +1,63 @@
+.shop-sidebar {
+  flex-basis: 22.9729%;
+
+  &__menu + &__menu {
+    margin-block-start: 40px;
+  }
+
+  &__menu-title {
+    font-size: $button-font-size-mobile;
+    text-transform: uppercase;
+    color: $color-mine-shaft-4;
+    margin-block-end: 30px;
+  }
+
+  &__list-item + &__list-item {
+    margin-block-start: 10px;
+  }
+
+  &__list-item:not(:last-child) {
+    border-block-end: 1px solid $color-mercury;
+  }
+
+  &__list-item {
+    padding-block-end: 10px;
+
+    &-title {
+      font-size: 15px;
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+
+  &__price-filter {
+    font-size: $text-font-size-mobile;
+    span {
+      margin-inline-end: 5px;
+    }
+  }
+
+  .btn {
+    background-color: $color-mine-shaft;
+    transition: background-color $trs ease;
+    border-radius: 0;
+    font-size: $text-font-size-mobile;
+    padding: 8px 25px;
+    margin-block-start: 20px;
+
+    &:hover {
+      background-color: $color-tango;
+    }
+  }
+
+  input[type='checkbox'] {
+    margin-inline-end: 10px;
+  }
+
+  input[type='number'] {
+    width: 70px;
+    padding: 10px 5px;
+    border: 1px solid $color-mercury;
+    margin-inline-end: 10px;
+    outline: 0;
+  }
+}
