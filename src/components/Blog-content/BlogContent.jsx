@@ -4,18 +4,25 @@ import Pagination from '../../components/Pagination/Pagination';
 
 const POSTS_PER_PAGE = 6;
 
-export default function BlogContent({ posts }) {
+export default function BlogContent({ posts, searchQuery, selectedTopic }) {
   const [currentPage, setCurrentPage] = useState(1);
 
   if (!posts) {
     return <div>Loading...</div>;
   }
 
-  // Calculate total pages
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+  // Filter posts based on searchQuery and selectedTopic
+  const filteredPosts = posts.filter(post => {
+    const matchesTopic = selectedTopic ? post.topic === selectedTopic : true;
+    const matchesSearchQuery = searchQuery ? post.title.toLowerCase().includes(searchQuery.toLowerCase()) : true;
+    return matchesTopic && matchesSearchQuery;
+  });
+
+  // Calculate total pages based on filtered posts
+  const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
   // Get posts for the current page
-  const currentPosts = posts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+  const currentPosts = filteredPosts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
 
   // Function to handle page changes
   const handlePageChange = page => {

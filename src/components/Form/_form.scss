@@ -1,0 +1,38 @@
+.form {
+  font-family: 'Open-sans', sans-serif;
+
+  &__field {
+    margin-block-end: 20px;
+
+    &-title {
+      display: block;
+      font-size: $text-font-size-mobile;
+      margin-block-end: 10px;
+    }
+
+    &-input {
+      height: 150px;
+      width: 100%;
+      background-color: $color-alabaster;
+      border: 1px solid $color-mercury;
+      padding: 20px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .btn {
+    background-color: $color-mine-shaft;
+    transition: background-color $trs ease;
+    font-size: $header-font-size;
+    text-transform: uppercase;
+    padding: 9px 15px;
+    border-radius: 0;
+
+    &:hover {
+      background-color: $color-tango;
+    }
+  }
+}

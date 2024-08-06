@@ -21,6 +21,65 @@
     &-title {
       text-transform: uppercase;
       font-size: 28px;
+      padding-bottom: 10px;
+      border-block-end: 1px solid $color-mercury;
+      margin-block-end: 30px;
+
+      @include media(down, $tablet) {
+        font-size: $h3-font-size-mobile;
+      }
+    }
+
+    &-form {
+      margin-block-start: 60px;
+    }
+
+    &-none {
+      font-size: $text-font-size-mobile;
+    }
+  }
+
+  &__comment + &__comment {
+    margin-block-start: 20px;
+  }
+
+  &__comment {
+    display: flex;
+    align-items: flex-start;
+
+    &-img {
+      @include width-height(66px);
+      flex: 0 0 66px;
+      margin-inline-end: 26px;
+    }
+
+    &-body {
+      width: 100%;
+      flex: 0 0 100%;
+      padding: 20px;
+      border: 1px solid $color-mercury;
+      position: relative;
+
+      &::before {
+        @include width-height(10px);
+        background-color: $color-white;
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 18px;
+        transform: rotate(45deg);
+        border-left: 1px solid $color-mercury;
+        border-bottom: 1px solid $color-mercury;
+        z-index: 10;
+      }
+    }
+
+    &-name {
+      text-transform: uppercase;
+    }
+
+    &-date {
+      margin-block: 10px;
     }
   }
 
