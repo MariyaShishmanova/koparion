@@ -34,6 +34,7 @@
     display: grid;
     gap: 30px;
     text-align: center;
+    position: relative;
 
     @include media(up, $tablet-small) {
       grid-template-columns: repeat(2, 1fr);
@@ -42,6 +43,15 @@
     @include media(up, $tablet) {
       grid-template-columns: repeat(3, 1fr);
     }
+  }
+
+  &__title-no-items {
+    font-size: $text-font-size;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   .product__img {

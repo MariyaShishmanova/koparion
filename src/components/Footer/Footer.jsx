@@ -1,5 +1,6 @@
 import paymentImg from '../../assets/payment-img.png';
 import FooterMenu from './FooterMenu';
+import { Link } from 'react-router-dom';
 
 const productsMenuItems = ['About us', 'Price drop', 'New products', 'Best sales'];
 const companyMenuItems = ['Contact us', 'Site map', 'Stores', 'My account'];
@@ -21,7 +22,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <a href="#">Blog</a>
+                <Link to="/blog">Blog</Link>
               </li>
             </ul>
           </div>
